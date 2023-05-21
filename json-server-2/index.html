@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Json server 2</title>
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <div id="list-course"></div>
+    <div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" />
+      </div>
+      <div>
+        <label for="description">Decription</label>
+        <input type="text" name="description" />
+      </div>
+      <button id="create">CREATE</button>
+      <button id="edit" class="hidden">EDIT</button>
+    </div>
+    <h1>Danh sach khoa hoc</h1>
+    <ul id="list-courses"></ul>
     <script src="./app.js"></script>
   </body>
 </html>
