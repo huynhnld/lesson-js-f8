@@ -96,7 +96,7 @@ function handleEditCourse(id) {
     var descriptionEditted = document.querySelector(
       'input[name="description"]'
     ).value;
-    formData2 = {
+    var formData2 = {
       name: nameEditted,
       description: descriptionEditted,
     };
