@@ -33,6 +33,30 @@ const app = {
       path: "./assets/music/song-5.mp3",
       image: "./assets/img/song-5.jpg",
     },
+    {
+      name: "Mưa tháng sáu",
+      singer: "Văn Mai Hương",
+      path: "./assets/music/song-4.mp3",
+      image: "./assets/img/song-4.jpg",
+    },
+    {
+      name: "Trách duyên trách phận",
+      singer: "Đỗ Thành Duy",
+      path: "./assets/music/song-5.mp3",
+      image: "./assets/img/song-5.jpg",
+    },
+    {
+      name: "Mưa tháng sáu",
+      singer: "Văn Mai Hương",
+      path: "./assets/music/song-4.mp3",
+      image: "./assets/img/song-4.jpg",
+    },
+    {
+      name: "Trách duyên trách phận",
+      singer: "Đỗ Thành Duy",
+      path: "./assets/music/song-5.mp3",
+      image: "./assets/img/song-5.jpg",
+    },
   ],
   render: function () {
     const htmls = this.songs.map((song) => {
@@ -51,7 +75,19 @@ const app = {
     });
     $(".playlist").innerHTML = htmls.join("");
   },
+  handleEvents: function () {
+    const cd = $(".cd");
+    const cdWidth = cd.offsetWidth;
+    document.onscroll = function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const newWidth = cdWidth - scrollTop;
+      console.log("newWidth:", newWidth);
+      cd.style.width = newWidth > 0 ? newWidth + "px" : 0;
+      cd.style.opacity = newWidth / cdWidth;
+    };
+  },
   start: function () {
+    this.handleEvents();
     this.render();
   },
 };
